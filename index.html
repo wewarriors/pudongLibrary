@@ -57,7 +57,7 @@
             <div class="card_div">
                 <div class="card_tip_div" style="width: 75%; margin: auto;text-align: left;">
                     <!--<h4>恭喜您.预定成功</h4>-->
-                    <h4>预约9月20日进馆</h4>
+                    <h4 id="reserve">预约9月20日进馆</h4>
                     <span style=" font-size: 0.8em; border: 1px solid #4cd964;color: #4cd964;">已报名</span>
                     <p style="font-size: 0.8em;color: #888;display: inline;">完成活动将获得10积分</p>
                 </div>
@@ -70,13 +70,13 @@
                         <div class="headerBox" style="background-color: rgb(103, 192, 189);">
                             <br>
                             <br>
-                            <a style="color: rgb(34, 43, 255); font-family:'STSong';font-size: 23px; letter-spacing: 2px;" >预约9月20日进馆</a>
+                            <a id = "reserve1" style="color: rgb(34, 43, 255); font-family:'STSong';font-size: 23px; letter-spacing: 2px;" >预约9月20日进馆</a>
                             <br>
                             <br>
                             <a style="color: rgb(214, 22, 36);font-family:'STSong';font-size: 19px; letter-spacing: 1px;" >16:30起停止进馆</p>
                         </div>
                     </div>
-                    <h5>活动时间：2020-09-20 09:00:00</h5>
+                    <h5 id="activeTime">活动时间：2020-09-20 09:00:00</h5>
                     
                     <h5>活动地点：浦东图书馆（现阶段签到由人员统一操作）</h5>
                     
@@ -84,7 +84,7 @@
                     
                     
                     
-                        <h5>取消报名截止时间：2020-09-20 09:00:00</h5>
+                        <h5 id="stopTime">取消报名截止时间：2020-09-20 09:00:00</h5>
                     
                     
                         
@@ -112,6 +112,16 @@
 <script type="text/javascript" src="http://wx1.pdlib.com/pudonglib-weixin/resources/js/zepto.min.js"></script>
 <script type="text/javascript" src="http://wx1.pdlib.com/pudonglib-weixin/resources/js/tools.js"></script>
 <script>
+
+        $(document).ready(function () {
+            var dateMonthDay = window.localStorage.getItem("dateMonthDay");
+            var dateAll = window.localStorage.getItem("dateAll");
+            $('#reserve').text('预约'+dateMonthDay+'进馆');
+            $('#reserve1').text('预约'+dateMonthDay+'进馆');
+            $('#activeTime').text('活动时间：' + dateAll+ ' 09:00:00');
+            $('#stopTime').text('取消报名截止时间：' + dateAll+ ' 09:00:00');
+        })
+
     var canCancel = true;
 
     //去查看活动回顾
