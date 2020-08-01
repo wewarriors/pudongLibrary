@@ -114,8 +114,14 @@
 <script>
 
         $(document).ready(function () {
-            var dateMonthDay = window.localStorage.getItem("dateMonthDay");
-            var dateAll = window.localStorage.getItem("dateAll");
+            // var dateMonthDay = window.localStorage.getItem("dateMonthDay");
+            // var dateAll = window.localStorage.getItem("dateAll");
+            var deocdeURL = decodeURI(location.search);//解码url
+            var pureURL = deocdeURL.split("?")[1];//获取"?"以后的参数
+            var valuesArray = pureURL.split("&");
+            dateMonthDay = valuesArray[0];
+            dateAll = valuesArray[1];
+            //alert(decodeURI(valuesArray));
             $('#reserve').text('预约'+dateMonthDay+'进馆');
             $('#reserve1').text('预约'+dateMonthDay+'进馆');
             $('#activeTime').text('活动时间：' + dateAll+ ' 09:00:00');

@@ -41,9 +41,10 @@
                     day = day.substr(1, 2);
                 }
                 var dateMonthDay = month + '月' + day + '日';
-                window.localStorage.setItem("dateMonthDay", dateMonthDay);
-                window.localStorage.setItem("dateAll", x);
-                window.location.href="index.html";
+                // window.localStorage.setItem("dateMonthDay", dateMonthDay);
+                // window.localStorage.setItem("dateAll", x);
+                // window.location.href="index.html";
+                window.location.assign(encodeURI("index.html" + "?" + dateMonthDay + "&"  + x));
             }
         </script>
     </head>
